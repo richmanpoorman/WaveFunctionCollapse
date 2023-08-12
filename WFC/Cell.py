@@ -5,8 +5,7 @@ from Tile import Tile
 from typing import List
 
 class Cell:
-    UP, DOWN, LEFT, RIGHT = 0, 1, 2, 3
-
+    
     def initializeCell(self, tileSet : List[Tile]) -> Cell:
         """Sets up the necessary parts for the cell"""
         pass
@@ -30,19 +29,8 @@ class Cell:
     def checkTiles(self, availibleTiles : List[Tile]) -> bool:
         """Checks if there are tiles (not in availible tiles) that need to be removed, and removes them, returning if it removed any"""
         pass
+
+    def getAdjacentPossible(self, direction : int) -> List[Tile]:
+        """Gets all possible tiles that can go next to the current cell"""
+        pass
     
-    def getTopPossible(self) -> List[Tile]:
-        """Gets all possible tiles for the top"""
-        pass
-
-    def getBottomPossible(self) -> List[Tile]:
-        """Gets all possible tiles for the bottom"""
-        pass
-
-    def getLeftPossible(self) -> List[Tile]:
-        """Gets all possible tiles for the left"""
-        pass
-
-    def getRightPossible(self) -> List[Tile]:
-        """Gets all possible tiles for the right"""
-        pass

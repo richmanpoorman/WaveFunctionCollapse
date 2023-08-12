@@ -8,21 +8,13 @@ class Tile:
     def initializeTile(self, image : Surface, weight : float) -> Tile:
         """Initializes the variables for a tile"""
         pass
-
-    def getTopAdjacent(self) -> List[Tile]:
-        """Get the tiles adjacemt above"""
+    
+    def getAdjacent(self, direction : int) -> List[Tile]:
+        """Get the tile from the given direction"""
         pass
-
-    def getBottomAdjacent(self) -> List[Tile]:
-        """Get the tiles adjacemt below"""
-        pass
-
-    def getLeftAdjacent(self) -> List[Tile]:
-        """Get the tiles adjacemt to the left"""
-        pass
-
-    def getRightAdjacent(self) -> List[Tile]:
-        """Get the tiles adjacemt to the right"""
+    
+    def setAdjacent(self, direction : int, newTileList : List[Tile]) -> None:
+        """Sets the given direction with what can go next to it"""
         pass
 
     def getImage(self) -> Surface:

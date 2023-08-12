@@ -5,6 +5,8 @@ from typing import Tuple
 import numpy as np
 import pygame as py
 import pygame.surface as Surface
+
+from Grid import Grid
 py.init()
 
 
@@ -35,6 +37,17 @@ class Display:
                 self.drawImage(imageGrid[r][c], (c, r))
         
 
+    def runStep(self, grid : Grid):
+        active : bool = True
+        while (active):
+            for event in py.event.get():
+                if event.type == py.QUIT:
+                    active = False 
+            
+            grid.buildGridStep()
+            self.drawGrid(grid.getGridImage())
+            py.display.update()
+
     def run(self):
         active : bool = True 
         
@@ -44,6 +57,4 @@ class Display:
                     active = False 
             py.display.update()
         # py.display.update()
-            
-        
         py.quit()

@@ -11,11 +11,15 @@ class Grid:
         pass
 
     def buildGrid(self) -> bool:
-        """Builds the grid of tiles (using Wave Function Collapse), and returns whether it fails or not"""
+        """Builds the grid of tiles (using Wave Function Collapse), and returns whether it passed or not"""
         pass 
+    
+    def buildGridStep(self) -> Tuple[bool, bool]:
+        """Builds one step of the algorithm, returning if it is (still going, failed)"""
+        pass
 
     def reduceOptions(self, position : Tuple[int, int]) -> bool:
-        """Reduced the possibilities a given cell, and propogates, and returns whether it fails or not"""
+        """Reduced the possibilities a given cell, and propogates, and returns whether it passed or not"""
         pass
 
     def getGridImage(self) -> np.ndarray:
