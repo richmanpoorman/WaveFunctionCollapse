@@ -11,7 +11,7 @@ from BasicImageSorter import BasicImageSorter
 import pygame as py
 py.init()
 
-GRID_SIZE = (200, 200)
+GRID_SIZE = (50, 50)
 SCREEN_SIZE = (800, 800)
 
 
@@ -68,13 +68,16 @@ display : Display = Display(gridSize = GRID_SIZE, screenSize = SCREEN_SIZE)
 #     .addRotatedTile("WFC\\TileSets\\TileSet1-RedAndBlue\\31.PNG", "r", "r", "r", "r") \
 #     .getTileSet()
 
-rgbTileSet : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB\\") \
-    .makeTiles(10) \
+# rgbTileSet : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB\\") \
+#     .makeTiles(0) \
+#     .getTileSet()
+
+rgbTileSet2 : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB2\\") \
+    .makeTiles(0) \
+    .addCustomRotatedTile("WFC\\TileSets\\RGB2\\1.PNG", weight = 10000) \
+    .addCustomRotatedTile("WFC\\TileSets\\RGB2\\2.PNG", weight = 10000) \
+    .addCustomRotatedTile("WFC\\TileSets\\RGB2\\3.PNG", weight = 10000) \
     .getTileSet()
-    # .addCustomRotatedTile("WFC\\TileSets\\RGB\\1.PNG", 200) \
-    # .addCustomRotatedTile("WFC\\TileSets\\RGB\\2.PNG", 200) \
-    # .addCustomRotatedTile("WFC\\TileSets\\RGB\\3.PNG", 200) \
-    # .getTileSet()
 
 # for tile in rgbTileSet:
 #     print("ID:", tile.getID(), ":", 
@@ -84,22 +87,6 @@ rgbTileSet : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB\\") \
 #           "LEFT:" , [x.getID() for x in tile.getAdjacent(3)]
 #         )
 
-testBasicGrid : Grid = BasicGrid(GRID_SIZE, rgbTileSet)
+testBasicGrid : Grid = BasicGrid(GRID_SIZE, rgbTileSet2)
 print("Building")
 display.runStep(testBasicGrid)
-# isMaking = True
-# while isMaking:
-#     isGoing, hasFailed = testBasicGrid.buildGridStep()
-#     isMaking = isGoing
-#     if hasFailed:
-#         break
-#     display.drawGrid(testBasicGrid.getGridImage())
-#     py.display.update()
-
-# didPass = testBasicGrid.buildGrid()
-# print(didPass)
-
-
-# display.drawGrid(testBasicGrid.getGridImage())
-
-# display.run()

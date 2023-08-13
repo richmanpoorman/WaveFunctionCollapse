@@ -5,6 +5,7 @@ from typing import Tuple, List
 from Tile import Tile
 
 from Grid import Grid
+from Cell import Cell
 from BasicCell import BasicCell
 import numpy as np 
 import pygame as py
@@ -63,7 +64,7 @@ class BasicGrid(Grid):
             x, y = dfs[-1]
             dfs.pop()
 
-            cell = self.__grid[x, y]
+            cell : Cell = self.__grid[x, y]
 
             # TODO:: For the heap entropy
             self.__pushEntropyHeap((cell.getEntropy(), (x, y)))

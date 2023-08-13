@@ -37,18 +37,19 @@ class BasicCell(Cell):
 
     def setTile(self) -> Tile:
         """Sets the current tile to the given 'tile'"""
+        if not self.__tileSet:
+            return None
         self.__tile = choices(self.__tileSet, weights = [tile.getWeight() for tile in self.__tileSet])[0]
         return self.__tile
     
     def getEntropy(self) -> float:
         """Gets the entropy of the self"""
-        return self.__entropy
+        return self.__entropy + uniform(-BasicCell.ENTROPY_NOISE, BasicCell.ENTROPY_NOISE)
     
     def __updateEntropy(self) -> float:
         totalWeight = self.__getTotalWeightSum()
         probabilities = [tile.getWeight() / totalWeight for tile in self.__tileSet]
         self.__entropy = -sum([prob * np.log2(prob) for prob in probabilities]) # Shannon entropy
-        self.__entropy += uniform(-BasicCell.ENTROPY_NOISE, BasicCell.ENTROPY_NOISE)
         return self.__entropy
 
 
