@@ -11,7 +11,7 @@ from BasicImageSorter import BasicImageSorter
 import pygame as py
 py.init()
 
-GRID_SIZE = (50, 50)
+GRID_SIZE = (100, 100)
 SCREEN_SIZE = (800, 800)
 
 
@@ -72,11 +72,10 @@ display : Display = Display(gridSize = GRID_SIZE, screenSize = SCREEN_SIZE)
 #     .makeTiles(0) \
 #     .getTileSet()
 
-rgbTileSet2 : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB2\\") \
+rgbTileSet2 : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB\\") \
     .makeTiles(0) \
-    .addCustomRotatedTile("WFC\\TileSets\\RGB2\\1.PNG", weight = 10000) \
-    .addCustomRotatedTile("WFC\\TileSets\\RGB2\\2.PNG", weight = 10000) \
-    .addCustomRotatedTile("WFC\\TileSets\\RGB2\\3.PNG", weight = 10000) \
+    .addCustomRotatedTile("WFC\\TileSets\\RGB\\1.PNG", weight = 1000) \
+    .addCustomRotatedTile("WFC\\TileSets\\RGB\\2.PNG", weight = 1000) \
     .getTileSet()
 
 # for tile in rgbTileSet:
