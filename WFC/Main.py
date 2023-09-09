@@ -72,10 +72,10 @@ display : Display = Display(gridSize = GRID_SIZE, screenSize = SCREEN_SIZE)
 #     .makeTiles(0) \
 #     .getTileSet()
 
-rgbTileSet2 : List[Tile] = BasicImageSorter("WFC\\TileSets\\RGB\\") \
+rgbTileSet2 : List[Tile] = BasicImageSorter("TileSets\\RGB\\") \
     .makeTiles(0) \
-    .addCustomRotatedTile("WFC\\TileSets\\RGB\\1.PNG", weight = 1000) \
-    .addCustomRotatedTile("WFC\\TileSets\\RGB\\2.PNG", weight = 1000) \
+    .addCustomRotatedTile("TileSets\\RGB\\1.PNG", weight = 1000) \
+    .addCustomRotatedTile("TileSets\\RGB\\2.PNG", weight = 1000) \
     .getTileSet()
 
 # for tile in rgbTileSet:
